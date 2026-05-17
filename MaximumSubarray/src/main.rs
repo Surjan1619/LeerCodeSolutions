@@ -2,13 +2,13 @@ use std::cmp;
 struct Solution;
 impl Solution {
     pub fn max_sub_array(nums: Vec<i32>) -> i32 {
-        let mut l = 0;
-        let mut r = 1;
-        let mut sum = nums[0] + nums[1];
-        while l < r{
-            
+        let mut max_sum = i32::MIN;
+        let mut curr_sum = nums[0];
+        for i in 0.. nums.len() {
+            curr_sum = cmp::max(nums[i], nums[i] + curr_sum);
+            if curr_sum > max_sum {max_sum = curr_sum}
         }
-        sum
+        max_sum
 
     }
 }

@@ -22,4 +22,6 @@ impl Solution {
 fn main() {
     let a = Solution::max_profit(vec![7, 1, 5, 3, 6, 4]);
     println!("{}", a);
-}
+    let mut i = 0;
+
+
